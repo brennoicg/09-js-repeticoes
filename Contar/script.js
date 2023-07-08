@@ -5,13 +5,16 @@ function contar() {
     let res = document.getElementById('res')
 
     if (ini.value.length == 0 || fim.value.length == 0 || passo.value.length == 0) {
-        res.innerHTML = ('Impossivel Contar!!!')
-        window.alert('[ERRO] Faltam dados!!!')
+        res.innerHTML = 'Impossivel Contar!!!'
     } else {
-        res.innerHTML = ('Contando... ')
+        res.innerHTML = 'Contando... <br>'
         let i = Number(ini.value)
         let f = Number(fim.value)
         let p = Number(passo.value)
+        if (p <= 0){
+            res.innerHTML = 'Passo invalido, Considerando PASSO 1 !!! <br>'
+            p = 1
+        }
         
         if (i < f){
                 for(let c = i; c <= f; c += p){
